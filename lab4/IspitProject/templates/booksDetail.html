@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{{ book.title }}
+{% endblock %}
+{% block content %}
+    
+    <div class="row my-4">
+        <div class="col-md-4">
+            <img src="{{ book.image.url }}" class="img-fluid" alt="{{ book.title }}">
+        </div>
+        <div class="col-md-8">
+            <ul class="list-unstyled">
+                <li><strong>Издавачка куќа:</strong> {{ book.publisher.name }}</li>
+                <li><strong>Категорија:</strong> {{ book.category }}</li>
+                <li><strong>ISBN:</strong> {{ book.isbn }}</li>
+                <li><strong>Година на издавање:</strong> {{ book.year_published }}</li>
+                <li><strong>Број на страни:</strong> {{ book.pages }}</li>
+                <li><strong>Димензии:</strong> {{ book.dimensions }}</li>
+                <li><strong>Корицa:</strong> {{ book.cover_type }}</li>
+                <li><strong>Цена:</strong> {{ book.price }} ден.</li>
+            </ul>
+            <a href="{% url 'index' %}" class="btn btn-secondary mt-4">Назад на почетна</a>
+        </div>
+    </div>
+{% endblock %}

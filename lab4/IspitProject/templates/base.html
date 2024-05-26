@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .navbar {
+        background-color: #001f3f;
+    }
+
+    .navbar-band, .nav-link {
+        color: #fff !important;
+    }
+
+    .nav-link:hover {
+        color: #ffcc00 !important;
+    }
+
+    .navbar-band img {
+        max-height: 40px;
+        margin-right: 10px;
+    }
+
+    .navbar-center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+    }
+    .light-blue-bg{
+        background-color: #81a6da;
+        padding: 10px 0;
+    }
+</style>
+<body>
+<header>
+    <nav class="navbar  navbar-dark">
+        <div class="navbar-center">
+            <a href="{% url 'index' %}" class="navbar-brand">
+                <img src="{% static '../media/Book.png' %}" alt="Logo">
+            </a>
+        </div>
+    </nav>
+    <div class="light-blue-bg">
+        <h2 class="text-center">
+            {% block header %}
+            {% endblock %}
+        </h2>
+    </div>
+</header>
+<main class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</main>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">
+            &copy; 2024 My Bookstore
+        </span></div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

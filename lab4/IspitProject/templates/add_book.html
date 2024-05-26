@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block header %}
+Додај нова книга
+{% endblock %}
+
+
+{% block content %}
+    <form method="post" action="{% url 'add_book' %}" enctype="multipart/form-data" class="mb-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_image" class="form-label">Слика:</label>
+            {{ form.image }}
+        </div>
+        <div class="form-group">
+            <label for="id_title" class="form-label">Наслов на книга:</label>
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            <label for="id_pages" class="form-label">Број на страни:</label>
+            {{ form.pages }}
+        </div>
+        <div class="form-group">
+            <label for="id_isbn" class="form-label">ISBN:</label>
+            {{ form.isbn }}
+        </div>
+        <div class="form-group">
+            <label for="id_publisher" class="form-label">Издавачка куќа:</label>
+            {{ form.publisher }}
+        </div>
+        <div class="form-group">
+            <label for="id_dimensions" class="form-label">Димензии:</label>
+            {{ form.dimensions }}
+        </div>
+        <div class="form-group">
+            <label for="id_year_published" class="form-label">Година на издавање:</label>
+            {{ form.year_published }}
+        </div>
+        <div class="form-group">
+            <label for="id_cover_type" class="form-label">Корицa:</label>
+            {{ form.cover_type }}
+        </div>
+        <div class="form-group">
+            <label for="id_price" class="form-label">Цена:</label>
+            {{ form.price }}
+        </div>
+        <div class="form-group">
+            <label for="id_category" class="form-label">Категорија:</label>
+            {{ form.category }}
+        </div>
+        <button type="submit" class="btn btn-warning">Додај книга</button>
+    </form>
+{% endblock %}

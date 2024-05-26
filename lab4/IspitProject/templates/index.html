@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    Листа на книги
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-end mb-4">
+        <a href="{% url 'add_book' %}" class="btn btn-primary">Додај нова книга</a>
+    </div>
+    <div class="row">
+        {% for book in books %}
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'book_detail' book.id %}" style="color: black">
+
+                    <div class="card">
+                        <img src="{{ book.image.url }}" alt="{{ book.title }}" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">Цена: {{ book.price }} ден.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
