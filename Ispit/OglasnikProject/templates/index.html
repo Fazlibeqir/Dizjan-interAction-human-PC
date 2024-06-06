@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block header %}
+    <h1 class="text-center">Сите огласи</h1>
+{% endblock %}
+{% block content %}
+    <div class="col">
+        {% for oglas in oglasi %}
+            <div class="row border mt-3">
+                <div class="col-md-2 mt-3">
+                    <img src="{{ oglas.image.url }}" alt="{{ oglas.title }}" class="img-fluid">
+                </div>
+                <div class="col">
+                    <h5>{{ oglas.title }}</h5>
+                    <p>{{ oglas.description }}</p>
+                    <p>{{ oglas.category.name }}</p>
+                    <h5>{{ oglas.price }} $</h5>
+                    <p>{{ oglas.status }}</p>
+                    <a href="{% url 'details' oglas.id %}">Details>></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
