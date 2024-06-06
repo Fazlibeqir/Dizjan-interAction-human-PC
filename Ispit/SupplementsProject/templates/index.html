@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block header %}
+    <hr class="my-0" style="border-top: 20px solid black;">
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-end mb4">
+     <a href="{% url 'addSupp' %}" class="btn btn-warning">Додај нов производ</a>
+    </div>
+   <div class="row">
+    {% for supp in supplements %}
+       <div class="col-md-4 mb-4">
+        <a href="{% url 'detailSupplements' supp.id %}">
+            <div class="card">
+                <img src="{{ supp.image.url }}" alt="{{ supp.title }}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ supp.title }}
+                    </h5>
+                    <p class="card-text">Цена: {{ supp.price }} ден.</p>
+                </div>
+            </div>
+        </a>
+       </div>
+    {% endfor %}
+   </div>
+{% endblock %}

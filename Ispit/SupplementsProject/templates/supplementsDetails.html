@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block header %}
+    <div  style="background-color: #d8d8d8">
+        <h2 class="text-success">{{ supplement.name }}</h2>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row my-4">
+        <div class="col-md-4">
+            <img src="{{ supplement.image.url }}" class="img-fluid" alt="{{ supplement.name }}">
+        </div>
+        <div class="col-md-8">
+            <ul class="list-unstyled">
+                <li><strong>Производител:</strong>{{ supplement.manufacturer }}</li>
+                <li><strong>Шифр на производот:</strong>{{ supplement.code }}</li>
+                <li><strong>Достапност:</strong>{{ supplement.available }}</li>
+                <li><strong>Цена:</strong>{{ supplement.price }} ден.</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

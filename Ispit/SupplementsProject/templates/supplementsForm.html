@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <div  style="background-color: #d8d8d8">
+        <h2 class="text-success">Додај нов производ</h2>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'addSupp' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-warning">Додај производ</button>
+    </form>
+{% endblock %}
