@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        {% for hotel in hotels %}
+            <p>{{ hotel.code }}</p>
+            <p>{{ hotel.start_date }}</p>
+            <p>{{ hotel.end_date }}</p>
+            <p>{{ hotel.reserved }}</p>
+            <img class="col-md-3 img-fluid" src="{{ hotel.id_image.url }}">
+        {% endfor %}
+        {% for room in rooms %}
+            <p>{{ room.number }}</p>
+            <p>{{ room.bed_number }}</p>
+            <p>{{ room.balcony }}</p>
+            <p>{{ room.status }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
