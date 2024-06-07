@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark bg-light">
+        <div class="container d-flex justify-content-start">
+            <h5>Eventualy</h5>
+        </div>
+        <div class="container d-flex justify-content-end list-unstyled">
+            <li class="ml-3"><a class="text-dark" href="{% url 'index' %}">Home</a></li>
+            <li class="ml-3"><a class="text-dark" href="{% url 'addEvent' %}">Ask for event</a></li>
+            <li class="ml-3"><a class="text-dark" href="#">Services</a></li>
+            <li class="ml-3"><a class="text-dark" href="#">Contact us</a></li>
+            <li class="ml-3"><a class="text-dark" href="#">News</a></li>
+            <li class="ml-3">
+                <a href="https://facebook.com" target="_blank" class="text-dark"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="ml-3">
+                <a href="https://twitter.com" target="_blank" class="text-dark"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="ml-3">
+                <a href="https://instagram.com" target="_blank" class="text-dark"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="ml-3">
+                <a href="https://linkedin.com" target="_blank" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container justify-content-center">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

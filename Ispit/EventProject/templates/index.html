@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card bg-dark text-white col-md-13 mx-auto my-3">
+        <img class="card-img img-fluid"
+             src="https://imageio.forbes.com/specials-images/imageserve/5fea08b9359920f0dad766b9/The-Nine-Types-of-People-You-Need-in-Your-Success-Circle/960x0.jpg?format=jpg&width=960"
+             alt="Card image">
+        <div class="card-img-overlay">
+            <p class="card-text">2025-21</p>
+            <p class="card-text">THE BEST SOLUTIONS FOR OUR CLIENTS</p>
+            <h1 class="card-title">We crate exclusive events using modern technologies and extensive features.</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for event in events %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ event.poster.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.name }}</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Eaque, incidunt iure hic,
+                            quisquam nihil ut quidem aperiam.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">{{ event.participants}} participants</small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
