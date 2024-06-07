@@ -13,6 +13,7 @@ class Employee(models.Model):
         ('рецепционер', 'рецепционер'),
         ('менаџер', 'менаџер'),
     )
+    employee_type = models.CharField(max_length=20, choices=EMPLOYEE_CHOICES, null=True, blank=True)
 
     def __str__(self):
         return self.name
